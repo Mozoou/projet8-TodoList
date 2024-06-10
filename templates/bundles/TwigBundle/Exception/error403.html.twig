@@ -1,0 +1,10 @@
+{# templates/bundles/TwigBundle/Exception/error403.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Access Forbidden</h1>
+
+    <p>
+        You don't have permission to access this page. If you believe this is an error, please contact the site administrator or <a href="{{ path('app_home') }}">return to the homepage</a>.
+    </p>
+{% endblock %}
