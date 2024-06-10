@@ -13,33 +13,36 @@
         }
     },
     "require": {
-        "php": "^7.2.5",
-        "symfony/console": "^5.4",
+        "php": "^8.2",
+        "symfony/console": "^6.4",
         "symfony/flex": "^1.21",
-        "symfony/framework-bundle": "^5.4.0",
-        "doctrine/orm": "^2.5",
-        "doctrine/doctrine-bundle": "^2.3.1",
-        "symfony/swiftmailer-bundle": "^3.1",
-        "symfony/monolog-bundle": "^3.1",
+        "symfony/framework-bundle": "^6.4",
+        "doctrine/orm": "^3.2",
+        "doctrine/doctrine-bundle": "^2.12",
+        "symfony/mailer": "^6.4",
+        "symfony/monolog-bundle": "^3.7",
         "symfony/polyfill-apcu": "^1.0",
-        "sensio/framework-extra-bundle": "^5.0",
-        "twig/twig": "2.13|^3.0.4",
-        "symfony/yaml": "^5.4",
-        "symfony/dotenv": "^5.4",
-        "doctrine/annotations": "^1.11.1",
-        "symfony/twig-bundle": "^5.4",
-        "symfony/asset": "^5.4",
-        "symfony/form": "^5.4",
-        "symfony/validator": "^5.4",
-        "symfony/security-bundle": "^5.4.0",
-        "doctrine/doctrine-migrations-bundle": "^3.0"
+        "twig/twig": "^3.0",
+        "symfony/yaml": "^6.4",
+        "symfony/dotenv": "^6.4",
+        "doctrine/annotations": "^2.0",
+        "symfony/twig-bundle": "^6.4",
+        "symfony/asset": "^6.4",
+        "symfony/form": "^6.4",
+        "symfony/validator": "^6.4",
+        "symfony/security-bundle": "^6.4",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
+        "symfony/expression-language": "^6.4",
+        "twig/extra-bundle": "^3.0",
+        "symfony/routing": "^6.4"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.39.0",
-        "symfony/phpunit-bridge": "^5.4",
-        "symfony/stopwatch": "^5.4",
-        "symfony/web-profiler-bundle": "^5.4",
-        "rector/rector": "^1.1"
+        "symfony/phpunit-bridge": "^6.4",
+        "symfony/stopwatch": "^6.4",
+        "symfony/web-profiler-bundle": "^6.4",
+        "rector/rector": "^1.1",
+        "doctrine/doctrine-fixtures-bundle": "^3.0"
     },
     "scripts": {
         "auto-scripts": {
@@ -53,14 +56,11 @@
             "@auto-scripts"
         ]
     },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
     "extra": {
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
-        "symfony-web-dir": "web",
+        "symfony-web-dir": "public",
         "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {

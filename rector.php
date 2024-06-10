@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
 use Rector\Symfony\Set\SymfonySetList;
+use Rector\Doctrine\Set\DoctrineSetList;
+use Rector\Symfony\Set\SensiolabsSetList;
+use Rector\Symfony\Set\SymfonyLevelSetList;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -14,14 +16,13 @@ return RectorConfig::configure()
         __DIR__ . '/tests',
         __DIR__ . '/web',
     ])
-    // uncomment to reach your current PHP version
-    // ->withPhpSets()
-    ->withSymfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml')
+    // ->withSymfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml')
     ->withSets([
-        SymfonySetList::SYMFONY_54,
-        SymfonySetList::SYMFONY_CODE_QUALITY,
-        SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
+        DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
+        SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES,
+        SymfonyLevelSetList::UP_TO_SYMFONY_64,
     ])
     ->withRules([
+        // Uncomment if you also want to add the void return type where no return is declared
         // AddVoidReturnTypeWhereNoReturnRector::class,
     ]);

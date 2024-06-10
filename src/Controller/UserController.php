@@ -6,31 +6,24 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserController extends AbstractController
 {
-    private $userPasswordHasher;
-
-    public function __construct(UserPasswordHasherInterface $userPasswordHasherInterface)
+    public function __construct(private readonly UserPasswordHasherInterface $userPasswordHasher)
     {
-        $this->userPasswordHasher = $userPasswordHasherInterface;
     }
 
-    /**
-     * @Route("/users", name="user_list")
-     */
-    public function list(UserRepository $userRepository)
+    #[Route(path: '/users', name: 'user_list')]
+    public function list(UserRepository $userRepository): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('user/list.html.twig', ['users' => $userRepository->findAll()]);
     }
 
-    /**
-     * @Route("/users/create", name="user_create")
-     */
+    #[Route(path: '/users/create', name: 'user_create')]
     public function create(Request $request, EntityManagerInterface $em)
     {
         $user = new User();
@@ -53,9 +46,7 @@ class UserController extends AbstractController
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
     }
 
-    /**
-     * @Route("/users/{id}/edit", name="user_edit")
-     */
+    #[Route(path: '/users/{id}/edit', name: 'user_edit')]
     public function edit(User $user, Request $request, EntityManagerInterface $em)
     {
         $form = $this->createForm(UserType::class, $user);

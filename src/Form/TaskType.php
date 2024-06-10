@@ -8,12 +8,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class TaskType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('title')
             ->add('content', TextareaType::class)
-            //->add('author') ===> must be the user authenticated
         ;
     }
 }
