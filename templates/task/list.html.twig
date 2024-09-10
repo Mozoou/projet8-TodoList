@@ -16,7 +16,11 @@
                     <p>{{ task.content }}</p>
                 </div>
                 <div style="margin-left: 0.5rem;">
-                    Auteur : {{ task.author.username }} {% if task.author == app.user %}(Vous){% endif %}
+                    {% if task.author %}
+                        Auteur : {{ task.author.username }} {% if task.author == app.user %}(Vous){% endif %}
+                    {% else %}
+                        Anonyme
+                    {% endif %}
                 </div>
                 <div>
                     {% if is_granted('delete', task) %}
@@ -25,8 +29,9 @@
                                 {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
                             </button>
                         </form>
+                        <a href="{{ path('task_edit', {'id' : task.id }) }}" class="btn btn-primary btn-sm pull-right">Modifier</a>
                         <form action="{{ path('task_delete', {'id' : task.id }) }}">
-                            <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                            <button id="delete-task-{{ task.id }}" class="btn btn-danger btn-sm pull-right">Supprimer</button>
                         </form>
                     {% endif %}
                 </div>

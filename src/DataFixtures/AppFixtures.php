@@ -5,13 +5,19 @@ namespace App\DataFixtures;
 use App\Entity\Task;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class AppFixtures extends Fixture
+class AppFixtures extends Fixture implements FixtureGroupInterface
 {
     public function __construct(private readonly UserPasswordHasherInterface $userPasswordHasher)
     {
+    }
+
+    public static function getGroups(): array
+    {
+        return ['dev'];
     }
 
     public function load(ObjectManager $manager): void
@@ -44,6 +50,14 @@ class AppFixtures extends Fixture
             $task->setTitle('Tache'.$i);
             $task->setContent('content');
             $task->setAuthor($user);
+            $manager->persist($task);
+        }
+
+        for ($i = 7; $i < 14; $i++) {
+            $task = new Task();
+            $task->setTitle('Tache'.$i);
+            $task->setContent('content');
+            $task->setAuthor(null);
             $manager->persist($task);
         }
 

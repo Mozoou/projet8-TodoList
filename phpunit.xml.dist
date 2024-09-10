@@ -5,11 +5,12 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.8/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="app/autoload.php"
+         bootstrap="tests/bootstrap.php"
 >
     <php>
         <ini name="error_reporting" value="-1" />
         <server name="KERNEL_DIR" value="app/" />
+        <env name="KERNEL_CLASS" value="App\Kernel"/>
 
         <!-- ###+ doctrine/doctrine-bundle ### -->
         <!-- Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url -->
@@ -17,13 +18,13 @@
         <!--  -->
         <!-- DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db" -->
         <!-- DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/db_name?serverVersion=8" -->
-        <env name="DATABASE_URL" value="postgresql://app:!ChangeMe!@127.0.0.1:5432/db_name?serverVersion=16&amp;charset=utf8"/>
+        <env name="DATABASE_URL" value="mysql://Mozoou:mozoou13@127.0.0.1:3306/p8-test?serverVersion=8"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
     </php>
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+            <directory>tests</directory> 
         </testsuite>
     </testsuites>
 

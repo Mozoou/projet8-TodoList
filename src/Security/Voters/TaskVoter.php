@@ -55,6 +55,10 @@ class TaskVoter extends Voter
 
     private function canEdit(Task $task, User $user): bool
     {
+        if ($this->isAdmin($user) && !$task->getAuthor()) {
+            return true;
+        }
+
         return $user === $task->getAuthor();
     }
 

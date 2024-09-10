@@ -1,5 +1,6 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
+    test: true
     router:
         enabled: true
     secret: '%env(APP_SECRET)%'
@@ -21,4 +22,10 @@ framework:
         log: true
 
     annotations:
-        enabled: true
+        enabled: false
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file
