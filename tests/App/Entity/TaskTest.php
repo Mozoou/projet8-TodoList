@@ -82,7 +82,6 @@ class TaskTest extends AbstractEntityTestCase
                 ],
                 null,
                 [],
-
             ],
         ];
     }
