@@ -15,7 +15,7 @@ Documentation officielle de GitHub : https://docs.github.com/fr/get-started/quic
 
 ## Contribuer au projet
 
-Pour toute remonter de bug, ou de proposition de nouvelles fonctionnalités, ...Vous devez ouvrir une issue depuis ce lien : https://github.com/Elisa-K/P8_ToDoList/issues
+Pour toute remonter de bug, ou de proposition de nouvelles fonctionnalités, ...Vous devez ouvrir une issue depuis ce lien : https://github.com/Mozoou/P8_ToDoList/issues
 
 1. Cliquez sur **New issue**
 
