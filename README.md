@@ -86,11 +86,11 @@ Pour tester le site, vous pouvez vous connecter avec les comptes utilisateur sui
 
 ```
 ROLE_USER :
-identifiant: user@example.com
+identifiant: user
 mot de passe: user
 
 ROLE_ADMIN :
-identifiant: admin@example.com
+identifiant: admin
 mot de passe: admin
 ```
 
