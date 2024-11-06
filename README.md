@@ -49,7 +49,7 @@ Pour installer le projet, suivez les étapes suivantes :
 
 8. Pour lancer le projet :
 ```bash
-  symfony serve
+  symfony serve -d
 ```
 ## Tests unitaires et fonctionnels
 
@@ -78,7 +78,7 @@ Pour installer le projet, suivez les étapes suivantes :
   vendor/bin/phpunit
 ```
 
-Le rapport de couverture de code se situe dans le dossier ***public/test-coverage***
+Le rapport de couverture de code se situe dans le dossier ***public/coverage***
 
 ## Utilisation
 Pour tester le site, vous pouvez vous connecter avec les comptes utilisateur suivants :
