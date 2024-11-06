@@ -31,8 +31,10 @@ Pour installer le projet, suivez les étapes suivantes :
 ```
 
 4. Configurer la base de données dans le fichier `.env.local` ou `.env` à la racine du projet :
-```DATABASE_URL="mysql://db_user:db_password@db_host/db_name?serverVersion=8&charset=utf8mb4"```
-5. Créer la base de données :
+```
+DATABASE_URL="mysql://db_user:db_password@db_host/db_name?serverVersion=8&charset=utf8mb4"
+```
+6. Créer la base de données :
 ```bash
   symfony console doctrine:database:create
 ```
