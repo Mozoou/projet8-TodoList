@@ -86,14 +86,14 @@ Pour tester le site, vous pouvez vous connecter avec les comptes utilisateur sui
 
 ```
 ROLE_USER :
-identifiant: user0
-mot de passe: password
+identifiant: user@example.com
+mot de passe: user
 
 ROLE_ADMIN :
-identifiant: admin
-mot de passe: password
+identifiant: admin@example.com
+mot de passe: admin
 ```
 
 ## Documentations
 
-Un rapport d'audit de performance ainsi que la documentation technique sur le système d'authentification se situe dans le dossier ***documentation***
+Un rapport d'audit de performance ainsi que la documentation technique sur le système d'authentification se situe dans le dossier ***docs***
