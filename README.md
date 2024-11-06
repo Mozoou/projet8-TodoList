@@ -55,7 +55,7 @@ DATABASE_URL="mysql://db_user:db_password@db_host/db_name?serverVersion=8&charse
 
 1. Configurer la base de données test dans le fichier `.env.test` à la racine du projet si précédemment vous avez créé un fichier `.env.local`
 ```
- 	DATABASE_URL="mysql://db_user:db_password@db_host/db_name?serverVersion=8&charset=utf8mb4"
+DATABASE_URL="mysql://db_user:db_password@db_host/db_name?serverVersion=8&charset=utf8mb4"
 ```
 
 2. Créer la base de données :
